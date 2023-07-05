@@ -17,6 +17,10 @@ jobs:
   test:
     #onde essa tarefa será executada
     runs-on: ubuntu-latest
+    #define diferentes configurações para ambiente de desenvolvimento
+    strategy:
+      matrix:
+        go-version: ['1.18','1.17', '>=1,18' ]
     #passo a passo que sera executado
     steps:
     #primeiro utiliza um repositório para fazer a tarefa
@@ -27,7 +31,8 @@ jobs:
       uses: actions/setup-go@v3
       # Define a versão do Go 1.19
       with:
-        go-version: 1.19
+      #Rodando com as versões diferentes definidas em go_version
+        go-version: ${{matrix.go_version}}
     #passo 2: faz o build do banco
     - name: Build-DB
      #executa o comando dentro da maquina
