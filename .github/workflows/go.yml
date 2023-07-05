@@ -6,9 +6,11 @@ name: Go
 #Ex: quando realizar um push ou um pull request nesse branch
 on:
   push:
-    branches: [ "Aula_1" ]
+    #branches: [ 'Aula_1' ] branch especifica
+    # qualquer branch
+    branches: [ '*' ]
   pull_request:
-    branches: [ "Aula_1" ]
+    branches: [ '*' ]
 
 #quais são os trabalhos realizados
 jobs:
