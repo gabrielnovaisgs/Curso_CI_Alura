@@ -67,3 +67,6 @@ jobs:
     needs: build
     #Demonstra que ele usa uma rotina de um arquivo externo
     uses: ./.github/workflows/Docker.yml
+    #Por padrão o github actions não pega os secrets por questões de segurança
+    #para permitir pegar os secrets de outra rotina precisamos dizer
+    secrets: inherit
