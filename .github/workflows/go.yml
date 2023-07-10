@@ -8,7 +8,7 @@ on:
   push:
     #branches: [ 'Aula_1' ] branch especifica
     # qualquer branch
-    branches: [ '*' ]
+    branches: [ 'Deploy' ]
   pull_request:
     branches: [ '*' ]
 
@@ -77,4 +77,10 @@ jobs:
     uses: ./.github/workflows/Docker.yml
     #Por padrão o github actions não pega os secrets por questões de segurança
     #para permitir pegar os secrets de outra rotina precisamos dizer
+    secrets: inherit
+  
+  Deplpy_EC2:
+    needs: build
+ 
+    uses: ./.github/workflows/EC2.yml
     secrets: inherit
