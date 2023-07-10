@@ -19,6 +19,12 @@ jobs:
   test:
     #onde essa tarefa será executada
     runs-on: ubuntu-latest
+    #Permite definir as váriaveis de ambiente
+    env: 
+      HOST: localhost
+      PORT: 5432
+      USER: root
+      DBNAME: root
     #define diferentes configurações para ambiente de desenvolvimento
     strategy:
       matrix:
