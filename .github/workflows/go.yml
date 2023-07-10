@@ -62,3 +62,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: go build -v main.go
+  
+  docker:
+    needs: build
+    #Demonstra que ele usa uma rotina de um arquivo externo
+    uses: ./.github/workflows/Docker.yml
